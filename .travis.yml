@@ -16,7 +16,7 @@ before_script:
   - pwd
   - ls -lart
   - mkdir -p ~/gopath/src/gopkg.in/mgo.v2
-  - cp -r ./mgoscratch/* ~/gopath/src/gopkg.in/mgo.v2
+  - cp -r * ~/gopath/src/gopkg.in/mgo.v2
   - make startdb
 
 script: 
