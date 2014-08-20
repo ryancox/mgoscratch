@@ -6,8 +6,7 @@ go:
   - tip
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install -q -y supervisor mongodb
+  - sudo apt-get install -q -y supervisor
 
 install:
   - go get gopkg.in/mgo.v2/bson
