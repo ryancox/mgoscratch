@@ -11,17 +11,19 @@ install:
   - go get gopkg.in/check.v1
 
 before_script:
-  - pwd
-  - ls -lart
   - mkdir -p ~/gopath/src/gopkg.in/mgo.v2
   - cp -r * ~/gopath/src/gopkg.in/mgo.v2
   - make startdb
 
 script: 
   - cd ~/gopath/src/gopkg.in/mgo.v2
+  - pwd
+  - ls -lart
   - go test -gocheck.v
 
 after_script:
+  - pwd
+  - ls -lart
   - make stopdb
 
 notifications:
