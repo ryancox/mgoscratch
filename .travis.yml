@@ -10,6 +10,7 @@ before_install:
 
 install:
   - go get gopkg.in/mgo.v2/bson
+  - go get gopkg.in/check.v1
 
 before_script:
   - make startdb
