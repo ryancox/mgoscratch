@@ -13,14 +13,14 @@ install:
   - go get gopkg.in/check.v1
 
 before_script:
+  - pwd
+  - ls -lart
+  - mkdir -p ~/gopath/src/gopkg.in/mgo.v2
+  - cp -r ./mgoscratch/* ~/gopath/src/gopkg.in/mgo.v2
   - make startdb
 
 script: 
-  - pwd
-  - ls -lart
-  - mkdir -p gopath/src/gopkg.in/mgo.v2
-  - cp -r ./mgoscratch/* gopath/src/gopkg.in/mgo.v2
-  - cd gopath/src/gopkg.in/mgo.v2
+  - cd ~/gopath/src/gopkg.in/mgo.v2
   - go test -gocheck.v
 
 after_script:
