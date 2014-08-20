@@ -5,7 +5,13 @@ go:
   - 1.3
   - tip
 
-install:
-  - apt-get install supervisor
+before_install:
+  - sudo apt-get install supervisor
 
-script: make startdb && go test -gocheck.v && make stopdb
+before_script:
+  - make startdb
+
+script: go test -gocheck.v
+
+after_script:
+  - make stopdb
