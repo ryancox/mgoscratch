@@ -6,7 +6,11 @@ go:
   - tip
 
 before_install:
-  - sudo apt-get install supervisor
+  - sudo apt-get update
+  - sudo apt-get install supervisor mongodb
+
+install:
+  - go get gopkg.in/mgo.v2/bson
 
 before_script:
   - make startdb
