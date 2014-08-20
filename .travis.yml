@@ -15,7 +15,16 @@ install:
 before_script:
   - make startdb
 
-script: go test -gocheck.v
+script: 
+  - pwd
+  - ls -lart
+  - mkdir -p gopath/src/gopkg.in/mgo.v2
+  - cp -r ./mgoscratch/* gopath/src/gopkg.in/mgo.v2
+  - cd gopath/src/gopkg.in/mgo.v2
+  - go test -gocheck.v
 
 after_script:
   - make stopdb
+
+notifications:
+  email: false
